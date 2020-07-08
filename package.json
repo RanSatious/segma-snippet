@@ -9,7 +9,8 @@
         "build": "tsc",
         "dev": "tsc --watch",
         "prepack": "npm run clean && npm run build",
-        "test": "jest"
+        "test": "jest",
+        "test:one": "jest tests/utils/format.test.ts"
     },
     "keywords": [
         "segma",

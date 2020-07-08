@@ -1,4 +1,2 @@
-const hello = () => {
-    console.log('hello world');
-};
-export { hello };
+export * from './utils/format';
+export * from './utils/index';
