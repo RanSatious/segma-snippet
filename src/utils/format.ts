@@ -10,8 +10,9 @@ interface ISizeOption {
 /**
  * 尺寸大小格式化
  *
- * @param {number} value
- * @param {Array<string>} units
+ * @param {number} size
+ * @param {ISizeOption} [option]
+ * @returns {string}
  */
 function formatSize(size: number, option?: ISizeOption): string {
     const sizeOption = Object.assign(
@@ -44,10 +45,9 @@ function formatSize(size: number, option?: ISizeOption): string {
  * 格式化时间差
  *
  * @param {number} span
- * @param {boolean} [keepMilliseconds=false]
- * @returns
+ * @returns {string}
  */
-function formatTimeSpan(span: number) {
+function formatTimeSpan(span: number): string {
     if (isNaN(span)) {
         return '';
     }

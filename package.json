@@ -4,13 +4,16 @@
     "description": "code snippets used frequently",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "clean": "shx rm -rf dist/*",
         "build": "tsc",
         "dev": "tsc --watch",
         "prepack": "npm run clean && npm run build",
         "test": "jest",
-        "test:one": "jest tests/utils/format.test.ts"
+        "test:one": "jest tests/utils/query.test.ts"
     },
     "keywords": [
         "segma",
