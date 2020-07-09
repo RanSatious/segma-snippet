@@ -13,6 +13,7 @@ https://github.com/RanSatious/segma-snippet
 ## 快速使用
 
 ```bash
+npm config set registry http://npm.segma.tech/
 npm i @segma/snippet
 ```
 
