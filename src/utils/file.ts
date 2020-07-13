@@ -1,9 +1,9 @@
-function downloadBlob(content: Blob, name: string): number;
-function downloadBlob(array: ArrayBuffer, name: string, mime: string): boolean;
-function downloadBlob(content: Blob | ArrayBuffer, name: string, mime?: string): any {
+function downloadBlob(content: Blob, name: string): void;
+function downloadBlob(array: ArrayBuffer, name: string, mime: string): void;
+function downloadBlob(content: Blob | ArrayBuffer, name: string, mime?: string): void {
     let url: string;
     if (content instanceof ArrayBuffer) {
-        url = URL.createObjectURL(new Blob([content], { type: mime }));
+        url = URL.createObjectURL(new Blob([content], mime ? { type: mime } : undefined));
     } else {
         url = URL.createObjectURL(content);
     }

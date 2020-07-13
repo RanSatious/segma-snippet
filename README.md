@@ -180,15 +180,27 @@ formatTimeSpan(1000 * 60 * 60 * 28 + 1000 * 60 * 12);
 // '1d4h12m'
 ```
 
-### name
+## 文件函数
+
+### downloadBlob
 
 **定义**
 
 ```typescript
+function downloadBlob(content: Blob, name: string): void;
+function downloadBlob(array: ArrayBuffer, name: string, mime: string): void;
 ```
 
 **使用**
 
 ```typescript
-import { name } from '@segma/snippet';
+import { downloadBlob } from '@segma/snippet';
+
+let array = await fetchRemoteData('http://remote.url');
+downloadBlob(array, 'file.name');
+
+// MIME 类型参考
+// https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+downloadBlob(array, 'image.jpeg', 'image/jpeg');
+downloadBlob(array, 'file.zip', 'application/zip');
 ```
