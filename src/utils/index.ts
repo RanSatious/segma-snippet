@@ -1,4 +1,20 @@
 /**
+ * 复制文本到剪贴板
+ *
+ * @param {string} content
+ * @returns {boolean}
+ */
+function copyText(content: string): boolean {
+    const input = document.createElement('input');
+    document.body.appendChild(input);
+    input.setAttribute('value', content);
+    input.select();
+    let result = document.execCommand('copy', false);
+    document.body.removeChild(input);
+    return result;
+}
+
+/**
  * 数组去重
  *
  * @template T
@@ -32,4 +48,4 @@ function sleep(interval: number): Promise<void> {
     });
 }
 
-export { distinct, isNil, sleep };
+export { copyText, distinct, isNil, sleep };
