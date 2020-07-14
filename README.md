@@ -19,6 +19,24 @@ npm i @segma/snippet
 
 ## utils 工具函数
 
+### copyText
+
+复制文本到剪贴板
+
+**定义**
+
+```typescript
+function copyText(content: string): boolean;
+```
+
+**使用**
+
+```typescript
+import { copyText } from '@segma/snippet';
+
+copyText('text to be copied');
+```
+
 ### distinct
 
 数组去重
@@ -203,4 +221,47 @@ downloadBlob(array, 'file.name');
 // https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
 downloadBlob(array, 'image.jpeg', 'image/jpeg');
 downloadBlob(array, 'file.zip', 'application/zip');
+```
+
+## 数学函数
+
+### sum
+
+计算数组之和
+
+**定义**
+
+```typescript
+function sum(values: number[]): number;
+```
+
+**使用**
+
+```typescript
+import { sum } from '@segma/snippet';
+
+sum([1, 2, 3]);
+// 6
+```
+
+### sumBy
+
+计算数组指定元素之和
+
+**定义**
+
+```typescript
+function sumBy<T>(values: T[], selector: (item: T) => number): number;
+```
+
+**使用**
+
+```typescript
+import { sumBy } from '@segma/snippet';
+
+sumBy([1, 2, 3], d => d * 2);
+// 12
+
+sumBy([{ a: 1 }, { a: 2 }, { a: 3 }], d => d.a);
+// 6
 ```
