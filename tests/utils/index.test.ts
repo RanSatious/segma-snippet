@@ -1,4 +1,4 @@
-import { sleep, isNil, distinct } from '../../dist/utils/index';
+import { sleep, isNil, distinct, uid } from '../../dist/utils/index';
 
 describe('[isNil]', () => {
     test('return true when passing null', () => {
@@ -59,5 +59,22 @@ describe('[distinct]', () => {
         expect(arr.length).toBe(2);
         expect(arr[0].name).toBe('a');
         expect(arr[1].name).toBe('b');
+    });
+});
+
+describe('[uid]', () => {
+    test('get id with right length', () => {
+        expect(uid().length).toBe(10);
+        expect(uid(20).length).toBe(20);
+    });
+
+    test('id is unique', () => {
+        expect(uid() === uid()).toBe(false);
+
+        let items = new Set();
+        for (let i = 0; i < 1e6; i++) {
+            items.add(uid());
+        }
+        expect(items.size).toBe(1e6);
     });
 });

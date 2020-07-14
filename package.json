@@ -1,6 +1,6 @@
 {
     "name": "@segma/snippet",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "code snippets used frequently",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -13,7 +13,7 @@
         "dev": "tsc --watch",
         "prepack": "npm run clean && npm run build",
         "test": "jest",
-        "test:one": "jest tests/utils/math.test.ts"
+        "test:one": "jest tests/utils/index.test.ts"
     },
     "keywords": [
         "segma",

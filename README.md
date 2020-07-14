@@ -129,6 +129,28 @@ async function request() {
 }
 ```
 
+### uid
+
+简单的 id 生成器
+
+**定义**
+
+```typescript
+function uid(len: number = 10): string;
+```
+
+**使用**
+
+```typescript
+import { uid } from '@segma/snippet';
+
+uid();
+// 'cXqJlJFGoW'
+
+uid(6);
+// 'kUViQ8'
+```
+
 ## format 格式化函数
 
 ### formatSize

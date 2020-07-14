@@ -48,4 +48,20 @@ function sleep(interval: number): Promise<void> {
     });
 }
 
-export { copyText, distinct, isNil, sleep };
+/**
+ * id 生成器
+ *
+ * @export
+ * @param {number} [len=10]
+ * @returns {string}
+ */
+function uid(len: number = 10): string {
+    let str = '';
+    const HEX = 'ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210';
+    while (len--) {
+        str += HEX[(Math.random() * HEX.length) | 0];
+    }
+    return str;
+}
+
+export { copyText, distinct, isNil, sleep, uid };
