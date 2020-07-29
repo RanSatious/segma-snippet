@@ -3,14 +3,15 @@
     "version": "0.1.4",
     "description": "code snippets used frequently",
     "main": "./dist/index.js",
+    "module": "./dist/index.esm.js",
     "types": "./dist/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
         "clean": "shx rm -rf dist/*",
-        "build": "tsc",
-        "dev": "tsc --watch",
+        "build": "rollup --config",
+        "dev": "rollup --config --watch",
         "prepack": "npm run clean && npm run build",
         "test": "jest",
         "test:one": "jest tests/utils/index.test.ts"
@@ -24,12 +25,20 @@
     "license": "ISC",
     "dependencies": {},
     "devDependencies": {
-        "@babel/core": "^7.10.4",
+        "@babel/core": "^7.10.5",
         "@babel/preset-env": "^7.10.4",
         "@babel/preset-typescript": "^7.10.4",
-        "@types/jest": "^26.0.4",
+        "@rollup/plugin-commonjs": "^14.0.0",
+        "@rollup/plugin-node-resolve": "^8.4.0",
+        "@types/jest": "^26.0.7",
+        "@types/lodash": "^4.14.158",
         "babel-jest": "^26.1.0",
         "jest": "^26.1.0",
-        "shx": "^0.3.2"
+        "lodash": "^4.17.19",
+        "rollup": "^2.23.0",
+        "rollup-plugin-typescript2": "^0.27.1",
+        "shx": "^0.3.2",
+        "tslib": "^2.0.0",
+        "typescript": "^3.9.7"
     }
 }
