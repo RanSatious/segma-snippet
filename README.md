@@ -37,6 +37,33 @@ import { copyText } from '@segma/snippet';
 copyText('text to be copied');
 ```
 
+### debounce
+
+`第三方`
+
+防抖函数
+
+**定义**
+
+```typescript
+interface DebounceSettings {
+    leading?: boolean;
+    maxWait?: number;
+    trailing?: boolean;
+}
+
+interface Cancelable {
+    cancel(): void;
+    flush(): void;
+}
+
+function debounce<T extends (...args: any) => any>(func: T, wait?: number, options?: DebounceSettings): T & Cancelable;
+```
+
+**参考**
+
+https://lodash.com/docs/4.17.15#debounce
+
 ### distinct
 
 数组去重
@@ -129,6 +156,27 @@ async function request() {
 }
 ```
 
+### throttle
+
+`第三方`
+
+节流函数
+
+**定义**
+
+```typescript
+interface ThrottleSettings {
+    leading?: boolean;
+    trailing?: boolean;
+}
+
+function throttle<T extends (...args: any) => any>(func: T, wait?: number, options?: ThrottleSettings): T & Cancelable;
+```
+
+**参考**
+
+https://lodash.com/docs/4.17.15#throttle
+
 ### uid
 
 简单的 id 生成器
@@ -152,6 +200,32 @@ uid(6);
 ```
 
 ## format 格式化函数
+
+### formatDate
+
+`第三方`
+
+格式化日期函数
+
+**定义**
+
+```typescript
+function formatDate(
+    date: Date | number,
+    format: string,
+    options?: {
+        locale?: Locale;
+        weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+        firstWeekContainsDate?: number;
+        useAdditionalWeekYearTokens?: boolean;
+        useAdditionalDayOfYearTokens?: boolean;
+    }
+): string;
+```
+
+**参考**
+
+https://date-fns.org/v2.15.0/docs/format
 
 ### formatSize
 
