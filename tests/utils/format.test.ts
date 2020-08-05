@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { formatSize, formatTimeSpan } from '../../dist/utils/format';
+import { formatSize, formatTimeSpan } from '../../dist';
 
 describe('[formatSize]', () => {
     test('return empty result correctly', () => {

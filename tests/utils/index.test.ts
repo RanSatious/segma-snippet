@@ -1,4 +1,5 @@
-import { sleep, isNil, distinct, uid } from '../../dist/utils/index';
+//@ts-nocheck
+import { sleep, isNil, distinct, uid } from '../../dist';
 
 describe('[isNil]', () => {
     test('return true when passing null', () => {
