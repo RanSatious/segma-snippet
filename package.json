@@ -1,6 +1,6 @@
 {
     "name": "@segma/snippet",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "description": "code snippets used frequently",
     "main": "./dist/index.js",
     "module": "./dist/index.esm.js",
